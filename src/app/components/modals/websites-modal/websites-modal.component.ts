@@ -30,6 +30,15 @@ export class WebsitesModalComponent implements OnInit {
     public tableService: TableService
   ) {}
 
+  navItems = [{
+    href: '#websitesOverview',
+    title: 'Overview'
+  },
+  {
+    href: '#websiteRelatedSystems',
+    title: 'Related Systems'
+  }]
+
   // Website scan Table Options
   websiteScanTableOptions: {} = this.tableService.createTableOptions({
     advancedSearch: true,
