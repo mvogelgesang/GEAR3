@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Components
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { AppModalComponent } from './components/modals/app-modal/app-modal.component';
 
 //// Main
 import { HomeComponent } from './views/main/home/home.component';
@@ -120,6 +121,7 @@ import { Globals } from './common/globals';
 
     ArtifactsComponent,
     GearModelComponent,
+    AppModalComponent,
   ],
   imports: [
     AppRoutingModule,
