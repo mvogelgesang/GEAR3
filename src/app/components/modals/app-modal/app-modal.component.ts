@@ -10,7 +10,7 @@ import { TableService } from '@services/tables/table.service';
 @Component({
   selector: 'app-modal',
   templateUrl: './app-modal.component.html',
-  styleUrls: ['./app-modal.component.css']
+  styleUrls: ['./app-modal.component.css'],
 })
 export class AppModalComponent implements OnInit {
   @Input()
@@ -21,20 +21,32 @@ export class AppModalComponent implements OnInit {
   navItems: any[] = [];
   @Input()
   tabPanes: any[] = [];
-  
-  modalEdit: () => void;
+  modalEdit(): void {}
+
+  public apiService: ApiService;
+  public location: Location;
+  public modalService: ModalsService;
+  public route: ActivatedRoute;
+  public router: Router;
+  public sharedService: SharedService;
+  public tableService: TableService;
 
   constructor(
-    private apiService: ApiService,
-    private location: Location,
-    public modalService: ModalsService,
-    private route: ActivatedRoute,
-    private router: Router,
-    public sharedService: SharedService,
-    public tableService: TableService
-  ) {}
-
-  ngOnInit(): void {
+    apiService: ApiService,
+    location: Location,
+    modalService: ModalsService,
+    route: ActivatedRoute,
+    router: Router,
+    sharedService: SharedService,
+    tableService: TableService
+  ) {
+    this.apiService = apiService;
+    this.location = location;
+    this.modalService = modalService;
+    this.route = route;
+    this.router = router;
+    this.sharedService = sharedService;
+    this.tableService = tableService;
   }
-
+  ngOnInit(): void {}
 }

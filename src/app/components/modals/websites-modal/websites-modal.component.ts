@@ -6,9 +6,9 @@ import { ApiService } from '@services/apis/api.service';
 import { ModalsService } from '@services/modals/modals.service';
 import { SharedService } from '@services/shared/shared.service';
 import { TableService } from '@services/tables/table.service';
-import {WebsiteScan} from '@api/models/website-scan.model';
-import {NavItems} from '@components/navItems.type';
-import {AppModalComponent} from '@components/modals/app-modal/app-modal.component';
+import { WebsiteScan } from '@api/models/website-scan.model';
+import { NavItemsType } from '@components/modals/navItems.type';
+import { AppModalComponent } from '@components/modals/app-modal/app-modal.component';
 // Declare jQuery symbol
 declare var $: any;
 
@@ -17,30 +17,44 @@ declare var $: any;
   templateUrl: './websites-modal.component.html',
   styleUrls: ['./websites-modal.component.css'],
 })
-export class WebsitesModalComponent extends AppModalComponent implements OnInit {
+export class WebsitesModalComponent
+  extends AppModalComponent
+  implements OnInit
+{
   website = <any>{};
   websiteScans = <any>this.getBlankWebsiteScan();
   serviceCategories = <any>{};
 
   constructor(
-    super(),
-    private apiService: ApiService,
-    private location: Location,
-    public modalService: ModalsService,
-    private route: ActivatedRoute,
-    private router: Router,
-    public sharedService: SharedService,
-    public tableService: TableService
-  ) {}
+    apiService: ApiService,
+    location: Location,
+    modalService: ModalsService,
+    route: ActivatedRoute,
+    router: Router,
+    sharedService: SharedService,
+    tableService: TableService
+  ) {
+    super(
+      apiService,
+      location,
+      modalService,
+      route,
+      router,
+      sharedService,
+      tableService
+    );
+  }
 
-  navItems: NavItems[] = [{
-    href: '#websitesOverview',
-    title: 'Overview'
-  },
-  {
-    href: '#websiteRelatedSystems',
-    title: 'Related Systems'
-  }]
+  navItems: NavItemsType[] = [
+    {
+      href: '#websitesOverview',
+      title: 'Overview',
+    },
+    {
+      href: '#websiteRelatedSystems',
+      title: 'Related Systems',
+    },
+  ];
 
   // Website scan Table Options
   websiteScanTableOptions: {} = this.tableService.createTableOptions({
@@ -136,7 +150,7 @@ export class WebsitesModalComponent extends AppModalComponent implements OnInit 
     );
   }
 
-  modalEdit(): void {
+  modalEdit() {
     // Hide Detail Modal before showing Manager Modal
     $('#websiteDetail').modal('hide');
     this.modalService.updateDetails(this.website, 'website', false);
@@ -157,8 +171,7 @@ export class WebsitesModalComponent extends AppModalComponent implements OnInit 
     ];
   }
 
-  serviceCategoryClick(id:string): void {
-    console.log('webservicecategoryClick', id);
+  serviceCategoryClick(id: number): void {
     $('#websiteDetail').modal('hide');
     this.apiService.getOneServiceCategory(id).subscribe((data: any[]) => {
       this.tableService.serviceCategoryTableClick(data[0]);
