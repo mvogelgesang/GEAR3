@@ -21,7 +21,7 @@ export class AppModalComponent implements OnInit {
   navItems: any[] = [];
   @Input()
   tabPanes: any[] = [];
-  @Input()
+  
   modalEdit: () => void;
 
   constructor(

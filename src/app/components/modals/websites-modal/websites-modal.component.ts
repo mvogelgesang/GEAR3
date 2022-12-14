@@ -6,7 +6,9 @@ import { ApiService } from '@services/apis/api.service';
 import { ModalsService } from '@services/modals/modals.service';
 import { SharedService } from '@services/shared/shared.service';
 import { TableService } from '@services/tables/table.service';
-
+import {WebsiteScan} from '@api/models/website-scan.model';
+import {NavItems} from '@components/navItems.type';
+import {AppModalComponent} from '@components/modals/app-modal/app-modal.component';
 // Declare jQuery symbol
 declare var $: any;
 
@@ -15,12 +17,13 @@ declare var $: any;
   templateUrl: './websites-modal.component.html',
   styleUrls: ['./websites-modal.component.css'],
 })
-export class WebsitesModalComponent implements OnInit {
+export class WebsitesModalComponent extends AppModalComponent implements OnInit {
   website = <any>{};
   websiteScans = <any>this.getBlankWebsiteScan();
   serviceCategories = <any>{};
 
   constructor(
+    super(),
     private apiService: ApiService,
     private location: Location,
     public modalService: ModalsService,
@@ -30,7 +33,7 @@ export class WebsitesModalComponent implements OnInit {
     public tableService: TableService
   ) {}
 
-  navItems = [{
+  navItems: NavItems[] = [{
     href: '#websitesOverview',
     title: 'Overview'
   },
@@ -133,7 +136,7 @@ export class WebsitesModalComponent implements OnInit {
     );
   }
 
-  websiteEdit() {
+  modalEdit(): void {
     // Hide Detail Modal before showing Manager Modal
     $('#websiteDetail').modal('hide');
     this.modalService.updateDetails(this.website, 'website', false);
@@ -141,7 +144,7 @@ export class WebsitesModalComponent implements OnInit {
     $('#websiteManager').modal('show');
   }
 
-  getBlankWebsiteScan() {
+  getBlankWebsiteScan(): WebsiteScan[] {
     return [
       {
         Scan_ID: 0,
@@ -154,7 +157,7 @@ export class WebsitesModalComponent implements OnInit {
     ];
   }
 
-  serviceCategoryClick(id) {
+  serviceCategoryClick(id:string): void {
     console.log('webservicecategoryClick', id);
     $('#websiteDetail').modal('hide');
     this.apiService.getOneServiceCategory(id).subscribe((data: any[]) => {
