@@ -47,11 +47,11 @@ export class WebsitesModalComponent
 
   navItems: NavItemsType[] = [
     {
-      href: '#websitesOverview',
+      href: 'websitesOverview',
       title: 'Overview',
     },
     {
-      href: '#websiteRelatedSystems',
+      href: 'websiteRelatedSystems',
       title: 'Related Systems',
     },
   ];
