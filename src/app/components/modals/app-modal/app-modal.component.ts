@@ -22,6 +22,7 @@ export class AppModalComponent implements OnInit {
   @Input()
   tabPanes: any[] = [];
   modalEdit(): void {}
+  viewTab: string = '';
 
   public apiService: ApiService;
   public location: Location;
