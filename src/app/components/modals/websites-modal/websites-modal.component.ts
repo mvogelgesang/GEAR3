@@ -19,7 +19,7 @@ declare var $: any;
 export class WebsitesModalComponent implements OnInit {
   website = <any>{};
   websiteScans = <any>this.getBlankWebsiteScan();
-  serviceCategories = <any>{};
+  websiteServiceCategories = <any>{};
 
   constructor(
     private apiService: ApiService,
@@ -85,7 +85,7 @@ export class WebsitesModalComponent implements OnInit {
         .getWebsiteServiceCategories(this.website.Website_ID)
         .subscribe(
           (websiteServiceCategories) =>
-            (this.serviceCategories = websiteServiceCategories)
+            (this.websiteServiceCategories = websiteServiceCategories)
         );
     });
 
@@ -148,7 +148,6 @@ export class WebsitesModalComponent implements OnInit {
   }
 
   serviceCategoryClick(id) {
-    console.log('webservicecategoryClick', id);
     $('#websiteDetail').modal('hide');
     this.apiService.getOneServiceCategory(id).subscribe((data: any[]) => {
       this.tableService.serviceCategoryTableClick(data[0]);
