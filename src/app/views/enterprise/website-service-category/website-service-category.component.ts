@@ -12,11 +12,11 @@ import { Title } from '@angular/platform-browser';
 declare var $: any;
 
 @Component({
-  selector: 'serviceCategory',
-  templateUrl: './serviceCategory.component.html',
-  styleUrls: ['./serviceCategory.component.css'],
+  selector: 'website-service-category',
+  templateUrl: './website-service-category.component.html',
+  styleUrls: ['./website-service-category.component.css'],
 })
-export class ServiceCategoryComponent implements OnInit {
+export class WebsiteServiceCategoryComponent implements OnInit {
   row: Object = <any>{};
 
   constructor(
@@ -93,7 +93,7 @@ export class ServiceCategoryComponent implements OnInit {
 
     // Method to open details modal when referenced directly via URL
     this.route.params.subscribe((params) => {
-      var detailServiceCategoryID = params['serviceCategoryID'];
+      var detailServiceCategoryID = params['websiteServiceCategoryID'];
       if (detailServiceCategoryID) {
         this.titleService.setTitle(
           `${this.titleService.getTitle()} - ${detailServiceCategoryID}`

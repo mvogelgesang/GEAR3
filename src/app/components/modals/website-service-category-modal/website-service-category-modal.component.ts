@@ -11,12 +11,12 @@ import { TableService } from '@services/tables/table.service';
 declare var $: any;
 
 @Component({
-  selector: 'service-category-modal',
-  templateUrl: './service-category-modal.component.html',
-  styleUrls: ['./service-category-modal.component.css'],
+  selector: 'website-service-category-modal',
+  templateUrl: './website-service-category-modal.component.html',
+  styleUrls: ['./website-service-category-modal.component.css'],
 })
-export class ServiceCategoryModalComponent implements OnInit {
-  serviceCategory = <any>{};
+export class WebsiteServiceCategoryModalComponent implements OnInit {
+  websiteServiceCategory = <any>{};
   serviceCategoryWebsites = <any>{};
 
   constructor(
@@ -78,10 +78,10 @@ export class ServiceCategoryModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.modalService.currentServiceCategory.subscribe((serviceCategory) => {
-      this.serviceCategory = serviceCategory;
+      this.websiteServiceCategory = serviceCategory;
     });
 
-    $('#serviceCategoryWebsites').bootstrapTable({
+    $('#websiteServiceCategorySites').bootstrapTable({
       columns: this.serviceCategoryWebsitesColumnDefs,
       data: [],
     });
@@ -115,7 +115,7 @@ export class ServiceCategoryModalComponent implements OnInit {
     // Hide Detail Modal before showing Manager Modal
     $('#serviceCategoryDetail').modal('hide');
     this.modalService.updateDetails(
-      this.serviceCategory,
+      this.websiteServiceCategory,
       'serviceCategory',
       false
     );
