@@ -30,7 +30,7 @@ router.use("/organizations", org);
 router.use("/pocs", poc);
 router.use("/records", records);
 router.use("/search", search);
-router.use("/service_category", serviceCategory);
+router.use("/website_service_category", serviceCategory);
 router.use("/systems", system);
 router.use("/system_time", sysTIME);
 router.use("/websites", websites);

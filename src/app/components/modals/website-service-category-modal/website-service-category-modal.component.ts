@@ -77,9 +77,11 @@ export class WebsiteServiceCategoryModalComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.modalService.currentServiceCategory.subscribe((serviceCategory) => {
-      this.websiteServiceCategory = serviceCategory;
-    });
+    this.modalService.currentWebsiteServiceCategory.subscribe(
+      (websiteServiceCategory) => {
+        this.websiteServiceCategory = websiteServiceCategory;
+      }
+    );
 
     $('#websiteServiceCategorySites').bootstrapTable({
       columns: this.serviceCategoryWebsitesColumnDefs,

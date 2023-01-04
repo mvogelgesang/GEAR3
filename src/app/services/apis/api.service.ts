@@ -70,8 +70,8 @@ export class ApiService {
   recordsUrl: string = this.sharedService.internalURLFmt('/api/records');
 
   // Service Category
-  serviceCategoryUrl: string = this.sharedService.internalURLFmt(
-    'api/service_category'
+  websiteServiceCategoryUrl: string = this.sharedService.internalURLFmt(
+    'api/website_service_category'
   );
 
   // Systems
@@ -321,7 +321,7 @@ export class ApiService {
   //// Service Category
   public getServiceCategory(): Observable<Service_Category[]> {
     return this.http
-      .get<Service_Category[]>(this.serviceCategoryUrl)
+      .get<Service_Category[]>(this.websiteServiceCategoryUrl)
       .pipe(
         catchError(
           this.handleError<Service_Category[]>('GET Service Category', [])
@@ -330,7 +330,9 @@ export class ApiService {
   }
   public getOneServiceCategory(id: number): Observable<Service_Category[]> {
     return this.http
-      .get<Service_Category[]>(this.serviceCategoryUrl + '/get/' + String(id))
+      .get<Service_Category[]>(
+        this.websiteServiceCategoryUrl + '/get/' + String(id)
+      )
       .pipe(
         catchError(
           this.handleError<Service_Category[]>('GET Service Category', [])
@@ -342,7 +344,7 @@ export class ApiService {
   ): Observable<Service_Category[]> {
     return this.http
       .get<Service_Category[]>(
-        this.serviceCategoryUrl + '/get/' + String(id) + '/websites'
+        this.websiteServiceCategoryUrl + '/get/' + String(id) + '/websites'
       )
       .pipe(
         catchError(

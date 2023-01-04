@@ -29,24 +29,26 @@ export class WebsiteServiceCategoryComponent implements OnInit {
     private tableService: TableService,
     private titleService: Title
   ) {
-    this.modalService.currentInvest.subscribe((row) => (this.row = row));
+    this.modalService.currentWebsiteServiceCategory.subscribe(
+      (row) => (this.row = row)
+    );
   }
 
   // serviceCategory Table Options
   tableOptions: {} = this.tableService.createTableOptions({
     advancedSearch: true,
-    idTable: 'serviceCategoryTable',
+    idTable: 'websiteServiceCategoryTable',
     classes: 'table-hover table-dark clickable-table',
     showColumns: false,
     showExport: true,
-    exportFileName: 'GSA_serviceCategory',
+    exportFileName: 'GSA_websiteServiceCategory',
     headerStyle: 'bg-royal-blue',
     pagination: true,
     search: true,
     sortName: 'name',
     sortOrder: 'asc',
     showToggle: true,
-    url: this.apiService.serviceCategoryUrl,
+    url: this.apiService.websiteServiceCategoryUrl,
   });
 
   // serviceCategory Table Columns
@@ -93,13 +95,13 @@ export class WebsiteServiceCategoryComponent implements OnInit {
 
     // Method to open details modal when referenced directly via URL
     this.route.params.subscribe((params) => {
-      var detailServiceCategoryID = params['websiteServiceCategoryID'];
-      if (detailServiceCategoryID) {
+      var detailWebsiteServiceCategoryID = params['websiteServiceCategoryID'];
+      if (detailWebsiteServiceCategoryID) {
         this.titleService.setTitle(
-          `${this.titleService.getTitle()} - ${detailServiceCategoryID}`
+          `${this.titleService.getTitle()} - ${detailWebsiteServiceCategoryID}`
         );
         this.apiService
-          .getOneServiceCategory(detailServiceCategoryID)
+          .getOneServiceCategory(detailWebsiteServiceCategoryID)
           .subscribe((data: any[]) => {
             this.tableService.serviceCategoryTableClick(data[0]);
           });
