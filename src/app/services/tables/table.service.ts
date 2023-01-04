@@ -356,12 +356,12 @@ export class TableService {
   public serviceCategoryTableClick(data: any, addRoute: boolean = true) {
     var options: ClickOptions = {
       data: data,
-      dataID: 'service_category_id',
+      dataID: 'website_service_category_id',
       update: 'serviceCategory',
-      detailModalID: '#serviceCategoryDetail',
+      detailModalID: '#websiteServiceCategoryDetail',
       sysTableID: '',
       exportName: data.name + '',
-      systemApiStr: '/api/service_category/get/', // Should revert back when can use IDs again for actual org table instead of names
+      systemApiStr: '/api/website_service_category/get/', // Should revert back when can use IDs again for actual org table instead of names
       addRoute: addRoute,
     };
     this.clickMethod(options);
