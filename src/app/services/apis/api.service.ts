@@ -339,7 +339,7 @@ export class ApiService {
         )
       );
   }
-  public getServiceCategoryRelatedWebsites(
+  public getWebsiteServiceCategoryRelatedWebsites(
     id: number
   ): Observable<Service_Category[]> {
     return this.http

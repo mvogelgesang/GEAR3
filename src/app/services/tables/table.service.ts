@@ -367,15 +367,15 @@ export class TableService {
     this.clickMethod(options);
     // load the related websites list to display within the main modal tab
     this.apiService
-      .getServiceCategoryRelatedWebsites(data[options.dataID])
-      .subscribe((serviceCategoryWebsiteData: Service_Category[]) => {
-        $('#serviceCategoryWebsites').bootstrapTable('refreshOptions', {
+      .getWebsiteServiceCategoryRelatedWebsites(data[options.dataID])
+      .subscribe((websiteServiceCategoryWebsiteData: Service_Category[]) => {
+        $('#websiteServiceCategoryWebsites').bootstrapTable('refreshOptions', {
           exportOptions: {
             fileName: this.sharedService.fileNameFmt(
               data.name + '-related-websites'
             ),
           },
-          data: serviceCategoryWebsiteData,
+          data: websiteServiceCategoryWebsiteData,
         });
       });
   }
