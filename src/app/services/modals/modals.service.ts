@@ -57,7 +57,6 @@ export class ModalsService {
   constructor(private globals: Globals, private router: Router) {}
 
   public updateDetails(row: {}, component: string, addRoute: boolean) {
-    console.log('component', component);
     if (component == 'investment') {
       this.investSource.next(row);
     } else if (component == 'capability') {

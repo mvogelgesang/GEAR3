@@ -350,7 +350,6 @@ export class ApiService {
   public getWebsiteServiceCategoryRelatedWebsites(
     id: number
   ): Observable<Service_Category[]> {
-    console.log('website sc id', id);
     return this.http
       .get<Service_Category[]>(
         this.websiteServiceCategoryUrl + '/get/' + String(id) + '/websites'

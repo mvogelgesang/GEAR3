@@ -88,7 +88,6 @@ export class WebsiteServiceCategoryComponent implements OnInit {
       $('#websiteServiceCategoryTable').on(
         'click-row.bs.table',
         function (e, row) {
-          console.log('row clicked', row);
           this.tableService.websiteServiceCategoryTableClick(row);
         }.bind(this)
       )
