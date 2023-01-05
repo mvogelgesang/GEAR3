@@ -366,6 +366,7 @@ export class TableService {
     };
     this.clickMethod(options);
     // load the related websites list to display within the main modal tab
+    console.log('website service category click data', data);
     this.apiService
       .getWebsiteServiceCategoryRelatedWebsites(data[options.dataID])
       .subscribe((websiteServiceCategoryWebsiteData: Service_Category[]) => {

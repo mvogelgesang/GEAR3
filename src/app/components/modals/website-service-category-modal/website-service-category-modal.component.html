@@ -15,7 +15,9 @@
           role="button"
           aria-label="Previous"
           tabindex="0"
-          (click)="tableService.previousModalRoute('serviceCategoryDetail')"
+          (click)="
+            tableService.previousModalRoute('websiteServiceCategoryDetail')
+          "
           [hidden]="!modalService.checkModalRoutes()"
         >
           <i class="fas fa-arrow-circle-left fa-lg fa-fw"></i>
@@ -63,9 +65,9 @@
                 <div class="col-12 col-md-6">
                   <h5>About Related Websites</h5>
                   <p>
-                    Service Categories at GSA can stretch across multiple staff
-                    offices. Below are websites that fall into the service
-                    category described above.
+                    Website Service Categories at GSA can stretch across
+                    multiple staff offices. Below are websites that fall into
+                    the website service category described above.
                   </p>
                 </div>
               </div>
