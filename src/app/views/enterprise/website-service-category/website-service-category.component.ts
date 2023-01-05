@@ -34,7 +34,7 @@ export class WebsiteServiceCategoryComponent implements OnInit {
     );
   }
 
-  // serviceCategory Table Options
+  // websiteServiceCategory Table Options
   tableOptions: {} = this.tableService.createTableOptions({
     advancedSearch: true,
     idTable: 'websiteServiceCategoryTable',
@@ -51,7 +51,7 @@ export class WebsiteServiceCategoryComponent implements OnInit {
     url: this.apiService.websiteServiceCategoryUrl,
   });
 
-  // serviceCategory Table Columns
+  // websiteServiceCategory Table Columns
   columnDefs: any[] = [
     {
       field: 'website_service_category_id',

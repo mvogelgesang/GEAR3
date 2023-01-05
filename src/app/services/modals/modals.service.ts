@@ -21,7 +21,7 @@ export class ModalsService {
   private orgSource = new Subject();
   currentOrg = this.orgSource.asObservable();
 
-  // ServiceCategory
+  // Website Service Category
   private websiteServiceCategorySource = new Subject();
   currentWebsiteServiceCategory =
     this.websiteServiceCategorySource.asObservable();

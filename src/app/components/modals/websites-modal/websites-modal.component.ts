@@ -8,6 +8,8 @@ import { SharedService } from '@services/shared/shared.service';
 import { TableService } from '@services/tables/table.service';
 import { Title } from '@angular/platform-browser';
 
+import { WebsiteServiceCategory } from '@api/models/website-service-category.model';
+
 // Declare jQuery symbol
 declare var $: any;
 
@@ -19,7 +21,7 @@ declare var $: any;
 export class WebsitesModalComponent implements OnInit {
   website = <any>{};
   websiteScans = <any>this.getBlankWebsiteScan();
-  websiteServiceCategories = <any>{};
+  websiteServiceCategories = <WebsiteServiceCategory[]>[];
 
   constructor(
     private apiService: ApiService,
