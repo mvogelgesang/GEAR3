@@ -147,13 +147,13 @@ export class WebsitesModalComponent implements OnInit {
     ];
   }
 
-  serviceCategoryClick(id) {
-    $('#websiteDetail').modal('hide');
+  websiteServiceCategoryClick(id) {
     this.apiService
       .getOneWebsiteServiceCategory(id)
       .subscribe((data: any[]) => {
         this.tableService.websiteServiceCategoryTableClick(data[0]);
       });
+    $('#websiteDetail').modal('hide');
   }
 
   getValues(value, maxValue) {
