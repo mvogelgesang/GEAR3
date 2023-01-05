@@ -290,21 +290,41 @@
                   <tbody>
                     <tr>
                       <td><i class="fa fa-bookmark"></i>Office</td>
-                      <td>{{ website.office }}</td>
+                      <td>
+                        {{ website.office ? website.office : "none provided" }}
+                      </td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-user-lock"></i>Sub Office</td>
-                      <td>{{ website.sub_office }}</td>
+                      <td>
+                        {{
+                          website.sub_office
+                            ? website.sub_office
+                            : "none provided"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <i class="fas fa-calendar-day"></i>Website Manager
                       </td>
-                      <td>{{ website.site_owner_email }}</td>
+                      <td>
+                        {{
+                          website.site_owner_email
+                            ? website.site_owner_email
+                            : "none provided"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td><i class="fa fa-certificate"></i>Contact Email</td>
-                      <td>{{ website.contact_email }}</td>
+                      <td>
+                        {{
+                          website.contact_email
+                            ? website.contact_email
+                            : "none provided"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-info-circle"></i>Redirects to</td>
@@ -319,7 +339,13 @@
                         <i class="far fa-list-alt"></i>Required by Law or
                         Policy?
                       </td>
-                      <td>{{ website.required_by_law_or_policy }}</td>
+                      <td>
+                        {{
+                          website.required_by_law_or_policy
+                            ? website.required_by_law_or_policy
+                            : "no response"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-hashtag"></i>Has DAP?</td>
