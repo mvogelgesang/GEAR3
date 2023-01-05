@@ -79,7 +79,18 @@
               <div class="row mb-3">
                 <div class="col-12">
                   <h4>Recent Screenshots</h4>
-                  <span
+                  <div
+                    *ngIf="
+                      website.production_status != 'production' ||
+                      website.type_of_site == 'infrastructure'
+                    "
+                    class="alert alert-warning"
+                    role="alert"
+                  >
+                    Websites that are not in a production status or are
+                    considered infrastructure do not contain screenshots
+                  </div>
+                  <span *ngIf="websiteScans[0].scan_date != ''"
                     >As of:
                     {{ websiteScans[0].scan_date | date : "mediumDate" }}</span
                   >
