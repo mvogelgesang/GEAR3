@@ -308,7 +308,11 @@
                     </tr>
                     <tr>
                       <td><i class="fas fa-info-circle"></i>Redirects to</td>
-                      <td>{{ website.redirects_to }}</td>
+                      <td>
+                        {{
+                          website.redirects_to ? website.redirects_to : "n/a"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td>
@@ -319,42 +323,54 @@
                     </tr>
                     <tr>
                       <td><i class="fas fa-hashtag"></i>Has DAP?</td>
-                      <td>{{ website.has_dap }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="far fa-address-card"></i>Current USWDS Score
-                      </td>
-                      <td>{{ website.current_uswds_score }}</td>
+                      <td>{{ website.has_dap ? "Yes" : "No" }}</td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-users"></i>Mobile Friendly?</td>
-                      <td>{{ website.mobile_friendly }}</td>
+                      <td>{{ website.mobile_friendly ? "Yes" : "No" }}</td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-fingerprint"></i>Has Search?</td>
-                      <td>{{ website.has_search }}</td>
+                      <td>{{ website.has_search ? "Yes" : "No" }}</td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-info-circle"></i>HTTPS enabled?</td>
-                      <td>{{ website.https }}</td>
+                      <td>{{ website.https ? "Yes" : "No" }}</td>
                     </tr>
                     <tr>
                       <td>
                         <i class="fas fa-info-circle"></i>Hosting Platform
                       </td>
-                      <td>{{ website.hosting_platform }}</td>
+                      <td>
+                        {{
+                          website.hosting_platform
+                            ? website.hosting_platform
+                            : "none provided"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td>
                         <i class="fas fa-info-circle"></i>Content Management
                         System
                       </td>
-                      <td>{{ website.cms_platform }}</td>
+                      <td>
+                        {{
+                          website.cms_platform
+                            ? website.cms_platform
+                            : "none provided"
+                        }}
+                      </td>
                     </tr>
                     <tr>
                       <td><i class="fas fa-info-circle"></i>Repository URL</td>
-                      <td>{{ website.repository_url }}</td>
+                      <td>
+                        {{
+                          website.repository_url
+                            ? website.repository_url
+                            : "none provided"
+                        }}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
