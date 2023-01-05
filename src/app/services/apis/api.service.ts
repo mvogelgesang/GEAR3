@@ -71,7 +71,7 @@ export class ApiService {
 
   // Service Category
   websiteServiceCategoryUrl: string = this.sharedService.internalURLFmt(
-    'api/website_service_category'
+    '/api/website_service_category'
   );
 
   // Systems

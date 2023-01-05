@@ -76,7 +76,7 @@ export class WebsiteServiceCategoryComponent implements OnInit {
       $('[data-toggle="popover"]').popover();
     });
 
-    $('#serviceCategoryTable').bootstrapTable(
+    $('#websiteServiceCategoryTable').bootstrapTable(
       $.extend(this.tableOptions, {
         columns: this.columnDefs,
         data: [],
