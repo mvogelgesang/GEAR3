@@ -83,7 +83,7 @@ export class WebsiteServiceCategoryModalComponent implements OnInit {
       }
     );
 
-    $('#websiteServiceCategorySites').bootstrapTable({
+    $('#websiteServiceCategoryWebsites').bootstrapTable({
       columns: this.serviceCategoryWebsitesColumnDefs,
       data: [],
     });
