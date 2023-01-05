@@ -54,7 +54,7 @@ export class WebsiteServiceCategoryComponent implements OnInit {
   // serviceCategory Table Columns
   columnDefs: any[] = [
     {
-      field: 'service_category_id',
+      field: 'website_service_category_id',
       title: 'Id',
       sortable: true,
     },
@@ -85,10 +85,10 @@ export class WebsiteServiceCategoryComponent implements OnInit {
 
     // Method to handle click events on the serviceCategory table
     $(document).ready(
-      $('#serviceCategoryTable').on(
+      $('#websiteServiceCategoryTable').on(
         'click-row.bs.table',
         function (e, row) {
-          this.tableService.serviceCategoryTableClick(row);
+          this.tableService.websiteServiceCategoryTableClick(row);
         }.bind(this)
       )
     );
@@ -101,9 +101,9 @@ export class WebsiteServiceCategoryComponent implements OnInit {
           `${this.titleService.getTitle()} - ${detailWebsiteServiceCategoryID}`
         );
         this.apiService
-          .getOneServiceCategory(detailWebsiteServiceCategoryID)
+          .getOneWebsiteServiceCategory(detailWebsiteServiceCategoryID)
           .subscribe((data: any[]) => {
-            this.tableService.serviceCategoryTableClick(data[0]);
+            this.tableService.websiteServiceCategoryTableClick(data[0]);
           });
       }
     });

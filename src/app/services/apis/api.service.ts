@@ -319,23 +319,31 @@ export class ApiService {
   }
 
   //// Service Category
-  public getServiceCategory(): Observable<Service_Category[]> {
+  public getWebsiteServiceCategory(): Observable<Service_Category[]> {
     return this.http
       .get<Service_Category[]>(this.websiteServiceCategoryUrl)
       .pipe(
         catchError(
-          this.handleError<Service_Category[]>('GET Service Category', [])
+          this.handleError<Service_Category[]>(
+            'GET Website Service Category',
+            []
+          )
         )
       );
   }
-  public getOneServiceCategory(id: number): Observable<Service_Category[]> {
+  public getOneWebsiteServiceCategory(
+    id: number
+  ): Observable<Service_Category[]> {
     return this.http
       .get<Service_Category[]>(
         this.websiteServiceCategoryUrl + '/get/' + String(id)
       )
       .pipe(
         catchError(
-          this.handleError<Service_Category[]>('GET Service Category', [])
+          this.handleError<Service_Category[]>(
+            'GET Website Service Category',
+            []
+          )
         )
       );
   }

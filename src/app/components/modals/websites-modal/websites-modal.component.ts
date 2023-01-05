@@ -149,9 +149,11 @@ export class WebsitesModalComponent implements OnInit {
 
   serviceCategoryClick(id) {
     $('#websiteDetail').modal('hide');
-    this.apiService.getOneServiceCategory(id).subscribe((data: any[]) => {
-      this.tableService.serviceCategoryTableClick(data[0]);
-    });
+    this.apiService
+      .getOneWebsiteServiceCategory(id)
+      .subscribe((data: any[]) => {
+        this.tableService.websiteServiceCategoryTableClick(data[0]);
+      });
   }
 
   getValues(value, maxValue) {

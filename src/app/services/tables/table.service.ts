@@ -353,7 +353,7 @@ export class TableService {
       });
   }
 
-  public serviceCategoryTableClick(data: any, addRoute: boolean = true) {
+  public websiteServiceCategoryTableClick(data: any, addRoute: boolean = true) {
     var options: ClickOptions = {
       data: data,
       dataID: 'website_service_category_id',
