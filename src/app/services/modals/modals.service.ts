@@ -57,11 +57,12 @@ export class ModalsService {
   constructor(private globals: Globals, private router: Router) {}
 
   public updateDetails(row: {}, component: string, addRoute: boolean) {
+    console.log('component', component);
     if (component == 'investment') {
       this.investSource.next(row);
     } else if (component == 'capability') {
       this.capSource.next(row);
-    } else if (component == 'serviceCategory') {
+    } else if (component == 'websiteServiceCategory') {
       this.websiteServiceCategorySource.next(row);
     } else if (component == 'organization') {
       this.orgSource.next(row);

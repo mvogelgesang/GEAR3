@@ -357,7 +357,7 @@ export class TableService {
     var options: ClickOptions = {
       data: data,
       dataID: 'website_service_category_id',
-      update: 'serviceCategory',
+      update: 'websiteServiceCategory',
       detailModalID: '#websiteServiceCategoryDetail',
       sysTableID: '',
       exportName: data.name + '',

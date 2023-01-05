@@ -49,7 +49,7 @@ export class WebsiteServiceCategoryModalComponent implements OnInit {
   // Related Website Table Columns
   serviceCategoryWebsitesColumnDefs: any[] = [
     {
-      field: 'Website_ID',
+      field: 'website_id',
       title: 'Website Id',
       sortable: true,
     },
@@ -94,7 +94,7 @@ export class WebsiteServiceCategoryModalComponent implements OnInit {
         'click-row.bs.table',
         function (e, row) {
           // Hide First Modal before showing new modal
-          $('#serviceCategoryDetail').modal('hide');
+          $('#websiteServiceCategoryDetail').modal('hide');
 
           this.tableService.systemsTableClick(row);
         }.bind(this)
@@ -102,10 +102,10 @@ export class WebsiteServiceCategoryModalComponent implements OnInit {
     );
 
     // Revert back to overview tab when modal goes away
-    $('#serviceCategoryDetail').on(
+    $('#websiteServiceCategoryDetail').on(
       'hidden.bs.modal',
       function (e) {
-        $('#serviceCategoryTabs li:first-child a').tab('show');
+        $('#websiteServiceCategoryTabs li:first-child a').tab('show');
 
         // Change URL back without ID after closing Modal
         this.sharedService.removeIDfromURL();
@@ -115,10 +115,10 @@ export class WebsiteServiceCategoryModalComponent implements OnInit {
 
   serviceCategoryEdit() {
     // Hide Detail Modal before showing Manager Modal
-    $('#serviceCategoryDetail').modal('hide');
+    $('#websiteServiceCategoryDetail').modal('hide');
     this.modalService.updateDetails(
       this.websiteServiceCategory,
-      'serviceCategory',
+      'websiteServiceCategory',
       false
     );
 
